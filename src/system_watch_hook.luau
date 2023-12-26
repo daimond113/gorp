@@ -34,9 +34,9 @@ local function new_hook(scheduler: rts.Scheduler, index: number)
 				end
 			end
 
-			table.insert(connections, world:added(ctype):connect(log(1)))
-			table.insert(connections, world:changed(ctype):connect(log(2)))
-			table.insert(connections, world:removing(ctype):connect(log(3)))
+			table.insert(connections, world:on_add(ctype):connect(log(1)))
+			table.insert(connections, world:on_change(ctype):connect(log(2)))
+			table.insert(connections, world:on_remove(ctype):connect(log(3)))
 		end
 	end
 

@@ -300,7 +300,7 @@ return function(
 								else ""
 						-- entity
 						elseif column == 2 then
-							local key, ver = ecr.extract(value)
+							local key, ver = ecr.inspect(value)
 							return `{key}:{ver}`
 						elseif column == 3 then
 							local ctypes = state.cts.ids()

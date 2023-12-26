@@ -90,7 +90,7 @@ local function set_query(player, query_id, index, query)
 			changed[id][i] = true
 		end
 
-		local ctype_changed = world:changed(ctype):connect(add)
+		local ctype_changed = world:on_change(ctype):connect(add)
 
 		table.insert(connections, ctype_changed)
 	end

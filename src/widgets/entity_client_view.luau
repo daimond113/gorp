@@ -144,7 +144,7 @@ return function(input: {
 						alignment = Enum.TextXAlignment.Left,
 
 						text = function()
-							local key, ver = ecr.extract(id())
+							local key, ver = ecr.inspect(id())
 
 							if id() == ecr.null then
 								return ""
@@ -169,7 +169,7 @@ return function(input: {
 						activated = function()
 							if column == 1 then
 								local id = id()
-								local key, ver = ecr.extract(id)
+								local key, ver = ecr.inspect(id)
 								local components = get_components(id)
 								local named = {}
 								local cts_ids = state.cts.ids()
@@ -202,7 +202,7 @@ return function(input: {
 							if ctype() == nil then return end
 
 							local id, ctype = id(), ctype()
-							local key, ver = ecr.extract(id)
+							local key, ver = ecr.inspect(id)
 							local value = world:try_get(id, ctype)
 							local is_wrapped = not (
 								type(value) == "string"

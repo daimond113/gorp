@@ -141,15 +141,15 @@ return function(name: string, registry: number)
 		end)
 
 		for _, ctype in state.cts.keys() do
-			local added = world:added(ctype):connect(function(id, value)
+			local added = world:on_add(ctype):connect(function(id, value)
 				changed[ctype][id] = value
 				removing[ctype][id] = nil
 			end)
-			local changing = world:changed(ctype):connect(function(id, value)
+			local changing = world:on_change(ctype):connect(function(id, value)
 				changed[ctype][id] = value
 				removing[ctype][id] = nil
 			end)
-			local removing = world:removing(ctype):connect(function(id)
+			local removing = world:on_remove(ctype):connect(function(id)
 				changed[ctype][id] = nil
 				removing[ctype][id] = true
 			end)
