@@ -1,3 +1,6 @@
+> [!WARNING]
+> This is a hacky patch-up to gorp in order to get it working with updated ECR versions. Use [gorp 0.2](https://github.com/Aloroid/gorp/tree/gorp-0.2) instead.
+
 # gorp
 
 gorp is a tool for [ecr](https://www.github.com/centau/ecr) that provides many features to track performance and test your game.
